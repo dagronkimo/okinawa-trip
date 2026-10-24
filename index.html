@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>沖繩親子繪本旅</title>
+<title>東京親子繪本旅</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
@@ -17,6 +17,7 @@ html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:"Huninn",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:560px;margin:0 auto;padding:0 16px}
+main.wrap{padding-top:66px}
 section{scroll-margin-top:72px;padding:28px 0 8px}
 h2{font-size:1.35rem;display:flex;align-items:center;gap:10px;margin-bottom:14px}
 h2 .dot{width:18px;height:18px;border:var(--line);border-radius:50%;flex:none}
@@ -29,7 +30,6 @@ h2 .dot{width:18px;height:18px;border:var(--line);border-radius:50%;flex:none}
 .logo{font-size:1.05rem;white-space:nowrap;display:flex;align-items:center;gap:6px;margin-right:4px}
 .nav a.lk{flex:none;text-decoration:none;font-size:.92rem;padding:5px 12px;border:var(--line);border-radius:999px;background:var(--white)}
 .nav a.lk.on{background:var(--yellow)}
-main.wrap{padding-top:66px}
 
 /* ---------- 首頁 ---------- */
 .hero{padding-top:20px}
@@ -55,7 +55,7 @@ main.wrap{padding-top:66px}
 .route .ap small{font-size:.8rem;opacity:.8}
 .route .ap.r{text-align:right}
 .route svg{width:100%;height:40px}
-.flight .meta{display:flex;justify-content:space-between;margin-top:10px;font-size:.88rem;border-top:2.5px dashed var(--ink);padding-top:8px}
+.flight .meta{display:flex;justify-content:space-between;gap:8px;margin-top:10px;font-size:.88rem;border-top:2.5px dashed var(--ink);padding-top:8px}
 
 /* ---------- 每日行程 ---------- */
 .tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:none}
@@ -66,7 +66,7 @@ main.wrap{padding-top:66px}
 .tab[aria-selected="true"]{background:var(--coral);transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
 .tab:focus-visible,.nav a:focus-visible,.chk input:focus-visible+span{outline:3px dashed var(--ink);outline-offset:3px}
 .dayhead{display:flex;align-items:center;gap:12px;padding:12px 14px;margin-bottom:16px;background:var(--white)}
-.dayhead svg{width:84px;height:64px;flex:none}
+.dayhead svg{width:84px;height:66px;flex:none}
 .dayhead h3{font-weight:400;font-size:1.15rem;line-height:1.3}
 .dayhead p{font-size:.85rem}
 .tl{position:relative;padding-left:26px}
@@ -85,8 +85,8 @@ main.wrap{padding-top:66px}
 .rate{font-size:.76rem;opacity:.85}
 .maplk{font-size:.76rem;text-decoration:none;border-bottom:2px solid var(--ink);margin-left:auto}
 .legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 14px}
-.pop{animation:pop .55s cubic-bezier(.3,1.6,.5,1)}
-@keyframes pop{0%{transform:translateY(14px) scale(.96);opacity:0}60%{transform:translateY(-6px) scale(1.02);opacity:1}100%{transform:none}}
+.pop{animation:pop .55s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes pop{0%{transform:translateY(14px) scale(.96);opacity:0}60%{transform:translateY(-6px) scale(1.02);opacity:1}100%{transform:none;opacity:1}}
 
 /* ---------- 待辦 ---------- */
 .todo{padding:14px}
@@ -120,13 +120,17 @@ footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
 .sway{animation:sway 5s ease-in-out infinite}
 .spin{animation:spin 24s linear infinite;transform-box:fill-box;transform-origin:center}
 .drift{animation:drift 9s ease-in-out infinite}
-.wiggle{animation:wiggle 3s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+.wiggle{animation:wiggle 3s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 0%}
+.twinkle{animation:twinkle 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.ride{animation:ride 6s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-6px)}}
-@keyframes bob{50%{transform:translate(6px,-4px)}}
+@keyframes bob{50%{transform:translate(4px,-4px)}}
 @keyframes sway{50%{transform:translateX(-10px)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes drift{50%{transform:translateX(16px)}}
-@keyframes wiggle{50%{transform:rotate(-4deg)}}
+@keyframes wiggle{50%{transform:rotate(5deg)}}
+@keyframes twinkle{50%{transform:scale(.7);opacity:.6}}
+@keyframes ride{0%,100%{transform:translateX(-18px)}50%{transform:translateX(18px)}}
 
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
@@ -140,8 +144,8 @@ footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
 <nav class="nav" aria-label="主選單">
   <div class="in">
     <span class="logo" aria-hidden="true">
-      <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/><path d="M5 16q4-3 8 0t8 0" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/></svg>
-      沖繩繪本旅
+      <svg width="26" height="26" viewBox="0 0 26 26"><path d="M3 21 L13 5 L23 21Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="M9 11.5 L13 5 L17 11.5 L15 13 L13 11.5 L11 13Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2" stroke-linejoin="round"/></svg>
+      東京繪本旅
     </span>
     <a class="lk" href="#home">首頁</a>
     <a class="lk" href="#flight">航班</a>
@@ -156,95 +160,86 @@ footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
 <!-- 首頁 -->
 <section id="home" class="hero">
   <div class="card hero-art">
-    <svg viewBox="0 0 360 230" role="img" aria-label="沖繩插圖：太陽、飛機、古宇利大橋、椰子樹小島與海裡的鯨鯊" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <svg viewBox="0 0 360 230" role="img" aria-label="東京插圖：晴空塔、富士山、東京鐵塔、飛機和綠色電車" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
       <!-- 太陽 -->
       <g class="spin">
-        <g stroke-width="3">
-          <line x1="300" y1="14" x2="300" y2="6"/><line x1="300" y1="86" x2="300" y2="78"/>
-          <line x1="264" y1="46" x2="256" y2="46"/><line x1="344" y1="46" x2="336" y2="46"/>
-          <line x1="275" y1="21" x2="269" y2="15"/><line x1="331" y1="77" x2="325" y2="71"/>
-          <line x1="325" y1="21" x2="331" y2="15"/><line x1="269" y1="77" x2="275" y2="71"/>
-        </g>
+        <line x1="140" y1="10" x2="140" y2="4"/><line x1="140" y1="70" x2="140" y2="64"/>
+        <line x1="110" y1="37" x2="104" y2="37"/><line x1="176" y1="37" x2="170" y2="37"/>
+        <line x1="119" y1="16" x2="115" y2="12"/><line x1="165" y1="62" x2="161" y2="58"/>
+        <line x1="161" y1="16" x2="165" y2="12"/><line x1="115" y1="62" x2="119" y2="58"/>
       </g>
-      <circle cx="300" cy="46" r="24" fill="#F6D27A"/>
-      <circle cx="292" cy="44" r="2" fill="#3E3A39" stroke="none"/><circle cx="308" cy="44" r="2" fill="#3E3A39" stroke="none"/>
-      <path d="M294 52q6 5 12 0" fill="none" stroke-width="2.5"/>
+      <circle cx="140" cy="37" r="20" fill="#F6D27A"/>
+      <circle cx="133" cy="35" r="2" fill="#3E3A39" stroke="none"/><circle cx="147" cy="35" r="2" fill="#3E3A39" stroke="none"/>
+      <path d="M135 42q5 4 10 0" fill="none" stroke-width="2.5"/>
       <!-- 雲 -->
-      <g class="drift">
-        <path d="M150 52h52a12 12 0 0 0-10-18 16 16 0 0 0-28-4 12 12 0 0 0-14 22z" fill="#FFFFFF"/>
-      </g>
-      <g class="drift" style="animation-delay:-4s">
-        <path d="M20 96h40a10 10 0 0 0-8-15 13 13 0 0 0-23-3 10 10 0 0 0-9 18z" fill="#FFFFFF"/>
-      </g>
+      <g class="drift"><path d="M178 78h44a10 10 0 0 0-8-15 14 14 0 0 0-24-3 10 10 0 0 0-12 18z" fill="#FFFFFF"/></g>
+      <g class="drift" style="animation-delay:-4s"><path d="M8 62h36a9 9 0 0 0-7-13 12 12 0 0 0-21-3 9 9 0 0 0-8 16z" fill="#FFFFFF"/></g>
+      <!-- 富士山 -->
+      <path d="M140 140 L208 62 L276 140Z" fill="#A8D3E6"/>
+      <path d="M190 83 L208 62 L226 83 L219 88 L213 82 L207 89 L201 82 L196 88Z" fill="#FFFFFF"/>
       <!-- 飛機 -->
       <g class="float">
-        <g transform="translate(40 28) rotate(-8)">
+        <g transform="translate(232 14) rotate(-6) scale(.7)">
           <path d="M0 22 C0 14 10 12 20 12 H70 C80 12 86 18 86 22 C86 26 80 30 70 30 H20 C10 30 0 28 0 22Z" fill="#FFFFFF"/>
           <path d="M36 21 L50 -2 L60 -2 L54 21Z" fill="#A8D3E6"/>
           <path d="M40 24 L54 44 L62 44 L56 24Z" fill="#A8D3E6"/>
           <path d="M4 18 L-2 2 L8 2 L16 14Z" fill="#F2A497"/>
-          <circle cx="62" cy="20" r="2.5" fill="#3E3A39" stroke="none"/><circle cx="52" cy="20" r="2.5" fill="#3E3A39" stroke="none"/><circle cx="42" cy="20" r="2.5" fill="#3E3A39" stroke="none"/>
-          <path d="M76 17q4 2 5 5" fill="none" stroke-width="2.5"/>
+          <circle cx="62" cy="20" r="2.5" fill="#3E3A39" stroke="none"/><circle cx="50" cy="20" r="2.5" fill="#3E3A39" stroke="none"/><circle cx="38" cy="20" r="2.5" fill="#3E3A39" stroke="none"/>
         </g>
       </g>
-      <!-- 海 -->
-      <path d="M0 128 Q15 120 30 128 T60 128 T90 128 T120 128 T150 128 T180 128 T210 128 T240 128 T270 128 T300 128 T330 128 T360 128 V232 H-2Z" fill="#A8D3E6"/>
-      <!-- 小島 + 椰子樹 -->
-      <path d="M232 132 C246 104 330 98 364 112 V134 Z" fill="#B9DAA5"/>
-      <path d="M232 132 C240 124 250 122 262 128" fill="none"/>
-      <g class="wiggle">
-        <path d="M318 108 C314 90 316 76 322 64" fill="none" stroke-width="5"/>
-        <path d="M322 64 C310 56 298 60 292 70 C304 64 314 64 322 64Z" fill="#B9DAA5"/>
-        <path d="M322 64 C330 52 344 52 352 60 C340 58 330 60 322 64Z" fill="#B9DAA5"/>
-        <path d="M322 64 C318 50 324 40 334 38 C328 48 326 56 322 64Z" fill="#B9DAA5"/>
-        <path d="M322 64 C334 64 344 70 346 80 C338 72 330 68 322 64Z" fill="#B9DAA5"/>
-      </g>
-      <!-- 紅瓦小屋 -->
-      <rect x="262" y="104" width="26" height="20" fill="#FFFFFF"/>
-      <path d="M256 106 L275 92 L294 106Z" fill="#F2A497"/>
-      <rect x="271" y="112" width="8" height="12" fill="#F6D27A"/>
-      <!-- 古宇利大橋 -->
+      <!-- 城市小房子 -->
       <g fill="#FFFFFF">
-        <rect x="-4" y="112" width="246" height="8" rx="3"/>
-        <rect x="24" y="120" width="7" height="18"/><rect x="74" y="120" width="7" height="18"/>
-        <rect x="124" y="120" width="7" height="18"/><rect x="174" y="120" width="7" height="18"/>
-        <rect x="220" y="120" width="7" height="14"/>
+        <rect x="98" y="112" width="22" height="30"/><rect x="120" y="100" width="18" height="42" fill="#F6D27A"/>
+        <rect x="262" y="108" width="20" height="34" fill="#F6D27A"/><rect x="282" y="118" width="18" height="24"/>
       </g>
-      <!-- 小車 -->
-      <g class="sway" style="animation-duration:7s">
-        <g transform="translate(118 96)">
-          <path d="M0 14 V8 Q0 4 4 4 H8 L13 -2 H26 L31 4 H36 Q40 4 40 8 V14Z" fill="#F6D27A"/>
-          <rect x="15" y="0" width="9" height="5" fill="#FFFFFF" stroke-width="2"/>
-          <circle cx="9" cy="15" r="4" fill="#FFFFFF"/><circle cx="31" cy="15" r="4" fill="#FFFFFF"/>
-        </g>
+      <!-- 晴空塔 -->
+      <g>
+        <line x1="62" y1="6" x2="62" y2="26"/>
+        <path d="M58 26 H66 L68 50 H56Z" fill="#FFFFFF"/>
+        <rect x="52" y="42" width="20" height="7" rx="3" fill="#A8D3E6"/>
+        <path d="M56 49 H68 L72 72 H52Z" fill="#FFFFFF"/>
+        <rect x="47" y="66" width="30" height="9" rx="4" fill="#A8D3E6"/>
+        <path d="M51 75 H73 L84 142 H40Z" fill="#FFFFFF"/>
+        <path d="M54 88 L80 128 M70 88 L44 128" fill="none" stroke-width="2"/>
       </g>
-      <!-- 浪 -->
-      <g class="sway" fill="none" stroke="#FFFFFF" stroke-width="3">
-        <path d="M30 160 q8 -6 16 0 t16 0"/><path d="M230 152 q8 -6 16 0 t16 0"/>
-        <path d="M280 196 q8 -6 16 0 t16 0"/><path d="M40 210 q8 -6 16 0 t16 0"/>
+      <!-- 東京鐵塔 -->
+      <g>
+        <line x1="322" y1="14" x2="322" y2="34"/>
+        <path d="M318 34 H326 L330 70 H314Z" fill="#F2A497"/>
+        <rect x="310" y="66" width="24" height="8" rx="2" fill="#FFFFFF"/>
+        <path d="M313 74 H331 L350 142 H336 Q322 112 308 142 H294Z" fill="#F2A497"/>
+        <rect x="306" y="98" width="32" height="6" fill="#FFFFFF"/>
       </g>
-      <!-- 鯨鯊 -->
-      <g class="bob">
-        <g transform="translate(110 156)">
-          <path d="M0 22 C6 6 40 0 80 6 C96 8 104 14 106 22 C104 30 94 36 78 38 C40 42 6 38 0 22Z" fill="#A8D3E6" stroke="#3E3A39"/>
-          <path d="M8 26 C30 36 70 38 100 26" fill="#FFFFFF" stroke="none"/>
-          <path d="M104 22 L124 6 L120 22 L124 38Z" fill="#A8D3E6"/>
-          <path d="M60 4 L68 -10 L76 6" fill="#A8D3E6"/>
-          <path d="M44 34 L50 46 L58 36" fill="#A8D3E6"/>
-          <circle cx="16" cy="17" r="2.5" fill="#3E3A39" stroke="none"/>
-          <path d="M6 24 q6 3 12 1" fill="none" stroke-width="2.5"/>
-          <g fill="#FFFFFF" stroke="none">
-            <circle cx="34" cy="12" r="2.4"/><circle cx="46" cy="18" r="2.4"/><circle cx="58" cy="12" r="2.4"/>
-            <circle cx="70" cy="18" r="2.4"/><circle cx="82" cy="12" r="2.4"/><circle cx="92" cy="18" r="2.2"/>
-            <circle cx="40" cy="24" r="2"/><circle cx="64" cy="24" r="2"/><circle cx="86" cy="24" r="2"/>
+      <!-- 草地 -->
+      <path d="M-2 140 Q40 130 90 140 T180 140 T270 140 T362 140 V232 H-2Z" fill="#B9DAA5"/>
+      <!-- 鐵軌 -->
+      <line x1="-2" y1="198" x2="362" y2="198"/>
+      <g stroke-width="2.5"><line x1="20" y1="198" x2="20" y2="205"/><line x1="70" y1="198" x2="70" y2="205"/><line x1="120" y1="198" x2="120" y2="205"/><line x1="170" y1="198" x2="170" y2="205"/><line x1="220" y1="198" x2="220" y2="205"/><line x1="270" y1="198" x2="270" y2="205"/><line x1="320" y1="198" x2="320" y2="205"/></g>
+      <!-- 電車 -->
+      <g class="ride">
+        <g transform="translate(70 160)">
+          <rect x="0" y="0" width="70" height="34" rx="9" fill="#FFFFFF"/>
+          <rect x="72" y="0" width="70" height="34" rx="9" fill="#FFFFFF"/>
+          <path d="M144 0 H200 Q222 4 224 26 V34 H144Z" fill="#FFFFFF"/>
+          <rect x="1.5" y="22" width="67" height="6" fill="#B9DAA5" stroke="none"/>
+          <rect x="73.5" y="22" width="67" height="6" fill="#B9DAA5" stroke="none"/>
+          <rect x="145.5" y="22" width="77" height="6" fill="#B9DAA5" stroke="none"/>
+          <g fill="#A8D3E6" stroke-width="2.5">
+            <rect x="8" y="6" width="14" height="11" rx="3"/><rect x="28" y="6" width="14" height="11" rx="3"/><rect x="48" y="6" width="14" height="11" rx="3"/>
+            <rect x="80" y="6" width="14" height="11" rx="3"/><rect x="100" y="6" width="14" height="11" rx="3"/><rect x="120" y="6" width="14" height="11" rx="3"/>
+            <rect x="152" y="6" width="14" height="11" rx="3"/><rect x="172" y="6" width="14" height="11" rx="3"/><path d="M194 6 H206 Q216 8 218 17 H194Z"/>
           </g>
-          <circle cx="-8" cy="12" r="3" fill="#FFFFFF" stroke-width="2"/><circle cx="-16" cy="4" r="2" fill="#FFFFFF" stroke-width="2"/>
+          <circle cx="216" cy="26" r="2.5" fill="#F6D27A" stroke-width="2"/>
+          <g fill="#FFFFFF"><circle cx="16" cy="36" r="4"/><circle cx="54" cy="36" r="4"/><circle cx="88" cy="36" r="4"/><circle cx="126" cy="36" r="4"/><circle cx="160" cy="36" r="4"/><circle cx="206" cy="36" r="4"/></g>
         </g>
       </g>
+      <!-- 小花 -->
+      <g class="twinkle"><circle cx="30" cy="220" r="4" fill="#F2A497"/><circle cx="340" cy="218" r="4" fill="#F6D27A"/></g>
+      <g class="twinkle" style="animation-delay:-1.2s"><circle cx="190" cy="222" r="4" fill="#FFFFFF"/><circle cx="120" cy="150" r="3.5" fill="#F2A497"/></g>
     </svg>
   </div>
-  <h1>沖繩親子自駕<br>5 天 4 夜繪本旅</h1>
-  <p class="sub">2026/12/19（六）– 12/23（三）・那霸 → 本部 → 北谷</p>
+  <h1>東京親子電車旅<br>5 天 4 夜繪本旅</h1>
+  <p class="sub">2026/12/19（六）– 12/23（三）・淺草 → 舞濱 → 台場</p>
   <div class="count" aria-live="polite">
     <div><b id="cd-d">--</b><span>天</span></div>
     <div><b id="cd-h">--</b><span>時</span></div>
@@ -261,20 +256,20 @@ footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
     <article class="card flight">
       <div class="top"><span class="pill" style="background:var(--coral)">去程・12/19（六）</span><span class="pill">範例航班</span></div>
       <div class="route">
-        <div class="ap"><b>TPE</b><small>桃園 T1<br>08:10</small></div>
+        <div class="ap"><b>TPE</b><small>桃園 T2<br>08:30</small></div>
         <svg viewBox="0 0 120 40" aria-hidden="true"><path d="M6 32 Q60 -6 114 32" fill="none" stroke="#3E3A39" stroke-width="3" stroke-dasharray="5 6" stroke-linecap="round"/><g transform="translate(52 6)"><path d="M0 7 H16 Q20 7 20 9 Q20 11 16 11 H0Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/><path d="M7 7 L11 0 L13 7Z M7 11 L11 17 L13 11Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2" stroke-linejoin="round"/></g></svg>
-        <div class="ap r"><b>OKA</b><small>那霸<br>10:40</small></div>
+        <div class="ap r"><b>HND</b><small>羽田 T3<br>12:40</small></div>
       </div>
-      <div class="meta"><span>中華航空 CI 122</span><span>飛行約 1 小時 30 分</span></div>
+      <div class="meta"><span>範例航班號</span><span>飛行約 3 小時 10 分</span></div>
     </article>
     <article class="card flight">
       <div class="top"><span class="pill" style="background:var(--green)">回程・12/23（三）</span><span class="pill">範例航班</span></div>
       <div class="route">
-        <div class="ap"><b>OKA</b><small>那霸<br>15:30</small></div>
+        <div class="ap"><b>HND</b><small>羽田 T3<br>17:30</small></div>
         <svg viewBox="0 0 120 40" aria-hidden="true"><path d="M6 32 Q60 -6 114 32" fill="none" stroke="#3E3A39" stroke-width="3" stroke-dasharray="5 6" stroke-linecap="round"/><g transform="translate(52 6)"><path d="M0 7 H16 Q20 7 20 9 Q20 11 16 11 H0Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/><path d="M7 7 L11 0 L13 7Z M7 11 L11 17 L13 11Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2" stroke-linejoin="round"/></g></svg>
-        <div class="ap r"><b>TPE</b><small>桃園 T1<br>16:05</small></div>
+        <div class="ap r"><b>TPE</b><small>桃園 T2<br>20:30</small></div>
       </div>
-      <div class="meta"><span>中華航空 CI 123</span><span>當地時間（沖繩快台灣 1 小時）</span></div>
+      <div class="meta"><span>範例航班號</span><span>當地時間（東京快台灣 1 小時）</span></div>
     </article>
   </div>
 </section>
@@ -304,7 +299,7 @@ footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
 
 <footer>
   景點與飯店皆為 Google 地圖評分 4.0 以上（2026 年 10 月資料）<br>
-  航班與車程為範例估算，出發前請以實際訂位與導航為準
+  航班與車程為範例估算，出發前請以實際訂位與乘換案內為準
 </footer>
 </main>
 
@@ -312,8 +307,9 @@ footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 /* ---------- 倒數 ---------- */
-const DEPART = new Date('2026-12-19T08:10:00+08:00');
-const RETURN = new Date('2026-12-23T16:05:00+08:00');
+const DEPART = new Date('2026-12-19T08:30:00+08:00');
+const RETURN = new Date('2026-12-23T20:30:00+08:00');
+const DAY1 = new Date('2026-12-19T00:00:00+08:00');
 function pad(n){return String(n).padStart(2,'0')}
 function tick(){
   const now = new Date(), diff = DEPART - now;
@@ -334,9 +330,9 @@ tick(); setInterval(tick,1000);
 /* ---------- 交通標籤 ---------- */
 const T = {
   flight:{label:'飛機', bg:'#A8D3E6', icon:'✈'},
-  bus:   {label:'接駁車', bg:'#FFFFFF', icon:'◉'},
-  car:   {label:'自駕', bg:'#F6D27A', icon:'◆'},
-  hwy:   {label:'高速公路', bg:'#F2A497', icon:'▶'},
+  rail:  {label:'電車・地鐵', bg:'#F6D27A', icon:'■'},
+  mono:  {label:'單軌・百合海鷗', bg:'#F2A497', icon:'◆'},
+  bus:   {label:'接駁巴士', bg:'#FFFFFF', icon:'◉'},
   walk:  {label:'步行', bg:'#B9DAA5', icon:'●'}
 };
 document.getElementById('legend').innerHTML = Object.values(T)
@@ -344,52 +340,51 @@ document.getElementById('legend').innerHTML = Object.values(T)
 
 /* ---------- 每日插圖 ---------- */
 const S = 'stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"';
-const sea = `<path d="M0 50 q10 -6 20 0 t20 0 t20 0 t20 0 V66 H0Z" fill="#A8D3E6"/>`;
 const ICONS = {
-  torii:`<svg viewBox="0 0 84 66" ${S} aria-hidden="true"><g class="float">${sea}<path d="M6 50 L14 32 L50 30 L58 50Z" fill="#B9DAA5"/><rect x="21" y="16" width="5" height="17" fill="#F2A497"/><rect x="38" y="16" width="5" height="17" fill="#F2A497"/><rect x="14" y="9" width="36" height="6" rx="2" fill="#F2A497"/><rect x="18" y="19" width="28" height="4" fill="#F2A497"/></g></svg>`,
-  shark:`<svg viewBox="0 0 84 66" ${S} aria-hidden="true"><rect x="2" y="4" width="80" height="58" rx="14" fill="#A8D3E6"/><g class="bob"><path d="M10 34 C14 22 40 20 56 24 C64 26 68 30 68 34 C66 40 58 44 46 44 C28 46 12 42 10 34Z" fill="#FFFFFF"/><path d="M66 34 L78 24 L76 34 L78 44Z" fill="#FFFFFF"/><circle cx="18" cy="31" r="2" fill="#3E3A39" stroke="none"/><g fill="#A8D3E6" stroke="none"><circle cx="30" cy="28" r="2"/><circle cx="40" cy="32" r="2"/><circle cx="50" cy="28" r="2"/><circle cx="58" cy="33" r="2"/></g></g></svg>`,
-  bridge:`<svg viewBox="0 0 84 66" ${S} aria-hidden="true">${sea}<path d="M56 50 C60 36 84 34 86 40 V52Z" fill="#B9DAA5"/><g class="sway" style="animation-duration:6s"><rect x="-2" y="36" width="64" height="5" rx="2" fill="#FFFFFF"/><rect x="12" y="41" width="4" height="12" fill="#FFFFFF"/><rect x="34" y="41" width="4" height="12" fill="#FFFFFF"/></g><circle cx="64" cy="16" r="9" fill="#F6D27A"/><path d="M70 40 l3 -6 l3 6z" fill="#F2A497"/></svg>`,
-  palm:`<svg viewBox="0 0 84 66" ${S} aria-hidden="true"><path d="M8 46 a24 24 0 0 1 48 0Z" fill="#F2A497"/>${sea}<g class="wiggle"><path d="M64 52 C60 40 62 28 66 20" fill="none" stroke-width="4"/><path d="M66 20 C56 14 48 18 46 26 C54 22 60 22 66 20Z" fill="#B9DAA5"/><path d="M66 20 C72 10 82 12 84 18 C76 18 70 18 66 20Z" fill="#B9DAA5"/><path d="M66 20 C74 22 80 28 80 34 C74 28 70 24 66 20Z" fill="#B9DAA5"/></g></svg>`,
-  white:`<svg viewBox="0 0 84 66" ${S} aria-hidden="true">${sea}<rect x="8" y="30" width="22" height="20" fill="#FFFFFF"/><rect x="30" y="22" width="20" height="28" fill="#FFFFFF"/><path d="M30 22 a10 10 0 0 1 20 0Z" fill="#A8D3E6"/><rect x="36" y="36" width="8" height="14" fill="#F6D27A"/><g class="float"><g transform="translate(54 8) rotate(-12)"><path d="M0 7 H20 Q24 7 24 9.5 Q24 12 20 12 H0Z" fill="#FFFFFF"/><path d="M8 7 L13 0 L16 7Z M8 12 L13 19 L16 12Z" fill="#F2A497" stroke-width="2.5"/></g></g></svg>`
+  lantern:`<svg viewBox="0 0 84 66" ${S} aria-hidden="true"><rect x="6" y="6" width="72" height="8" rx="3" fill="#F2A497"/><line x1="42" y1="14" x2="42" y2="18"/><g class="wiggle"><rect x="30" y="18" width="24" height="5" rx="2" fill="#3E3A39"/><path d="M28 23 H56 Q64 38 56 53 H28 Q20 38 28 23Z" fill="#F2A497"/><rect x="30" y="53" width="24" height="5" rx="2" fill="#3E3A39"/><text x="42" y="43" text-anchor="middle" font-size="12" font-family="Huninn,sans-serif" fill="#3E3A39" stroke="none">雷門</text></g></svg>`,
+  panda:`<svg viewBox="0 0 84 66" ${S} aria-hidden="true"><rect x="2" y="44" width="80" height="20" rx="8" fill="#B9DAA5"/><g class="bob"><circle cx="27" cy="14" r="8" fill="#3E3A39"/><circle cx="57" cy="14" r="8" fill="#3E3A39"/><ellipse cx="42" cy="32" rx="22" ry="19" fill="#FFFFFF"/><ellipse cx="33" cy="31" rx="5" ry="6.5" fill="#3E3A39" transform="rotate(-20 33 31)"/><ellipse cx="51" cy="31" rx="5" ry="6.5" fill="#3E3A39" transform="rotate(20 51 31)"/><circle cx="34" cy="30" r="1.6" fill="#FFFFFF" stroke="none"/><circle cx="50" cy="30" r="1.6" fill="#FFFFFF" stroke="none"/><ellipse cx="42" cy="39" rx="3" ry="2" fill="#3E3A39"/><circle cx="28" cy="40" r="3" fill="#F2A497" stroke="none"/><circle cx="56" cy="40" r="3" fill="#F2A497" stroke="none"/></g></svg>`,
+  balloon:`<svg viewBox="0 0 84 66" ${S} aria-hidden="true"><g class="twinkle"><path d="M12 12 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2Z" fill="#F6D27A" stroke-width="2"/></g><g class="twinkle" style="animation-delay:-1s"><path d="M72 40 l2 4 4 2 -4 2 -2 4 -2 -4 -4 -2 4 -2Z" fill="#A8D3E6" stroke-width="2"/></g><g class="float"><path d="M30 38 Q34 50 40 62" fill="none" stroke-width="2"/><path d="M46 34 Q44 48 40 62" fill="none" stroke-width="2"/><path d="M60 40 Q50 52 40 62" fill="none" stroke-width="2"/><ellipse cx="30" cy="26" rx="10" ry="12" fill="#F2A497"/><ellipse cx="47" cy="22" rx="10" ry="12" fill="#F6D27A"/><ellipse cx="61" cy="29" rx="9" ry="11" fill="#A8D3E6"/></g></svg>`,
+  bridge:`<svg viewBox="0 0 84 66" ${S} aria-hidden="true"><path d="M0 52 q10 -6 20 0 t20 0 t20 0 t20 0 V66 H0Z" fill="#A8D3E6"/><rect x="20" y="14" width="7" height="38" fill="#FFFFFF"/><rect x="57" y="14" width="7" height="38" fill="#FFFFFF"/><path d="M-2 18 Q12 38 23 16 Q42 42 60 16 Q72 38 86 18" fill="none"/><rect x="-2" y="38" width="88" height="6" rx="2" fill="#FFFFFF"/><g class="twinkle"><circle cx="10" cy="8" r="2.5" fill="#F6D27A" stroke-width="2"/><circle cx="42" cy="8" r="2.5" fill="#F2A497" stroke-width="2"/><circle cx="74" cy="8" r="2.5" fill="#B9DAA5" stroke-width="2"/></g></svg>`,
+  tower:`<svg viewBox="0 0 84 66" ${S} aria-hidden="true"><line x1="26" y1="4" x2="26" y2="14"/><path d="M23 14 H29 L31 30 H21Z" fill="#F2A497"/><rect x="17" y="28" width="18" height="6" rx="2" fill="#FFFFFF"/><path d="M20 34 H32 L44 64 H34 Q26 50 18 64 H8Z" fill="#F2A497"/><rect x="15" y="46" width="22" height="4" fill="#FFFFFF"/><g class="float"><g transform="translate(50 16) rotate(-14)"><path d="M0 7 H22 Q27 7 27 9.5 Q27 12 22 12 H0Z" fill="#FFFFFF"/><path d="M9 7 L14 0 L17 7Z M9 12 L14 19 L17 12Z" fill="#A8D3E6" stroke-width="2.5"/></g></g></svg>`
 };
 
 /* ---------- 行程資料 ---------- */
-const MAP = cid => `https://maps.google.com/maps?cid=${cid}`;
+const MAP = (q,id) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}&query_place_id=${id}`;
 const DAYS = [
- {d:'12/19', w:'六', title:'抵達那霸・市區散步', note:'第一天輕鬆走，讓小朋友適應', icon:'torii', items:[
-  {t:'08:10', n:'桃園機場起飛', p:'提早 2 小時報到；兒童護照記得一起帶。', tags:[['flight','約 1.5 小時']]},
-  {t:'10:40', n:'抵達那霸機場・取車', p:'入境後到租車櫃台搭接駁車去營業所。6 歲以下法規要用安全座椅，訂車時一起預約。', tags:[['bus','約 15 分']]},
-  {t:'13:30', n:'波上宮', must:true, r:'4.4', p:'蓋在海崖上的神社，旁邊就是那霸市區唯一的海灘，可以讓小孩先踩踩沙。', tags:[['car','約 30 分']], m:'8604780068634698924'},
-  {t:'15:30', n:'入住 STRATA Naha', r:'4.4', p:'位在牧志，走路就到國際通，先放行李休息。', tags:[['car','約 15 分']], m:'12430817265158853698'},
-  {t:'16:30', n:'國際通・牧志公設市場', must:true, r:'4.4', p:'買風獅爺、紫芋塔、Blue Seal 冰淇淋；晚餐就在附近吃。', tags:[['walk','約 5 分']], m:'10189739362213780994'}
+ {d:'12/19', w:'六', title:'抵達羽田・淺草下町', note:'京急線直通淺草，不用轉車', icon:'lantern', items:[
+  {t:'08:30', n:'桃園機場起飛', p:'提早 2 小時報到；兒童護照記得一起帶。', tags:[['flight','約 3 小時']]},
+  {t:'12:40', n:'抵達羽田機場第 3 航廈', p:'入境後在機場買 Welcome Suica 或用手機 Suica 儲值，之後搭車都靠它。', tags:[]},
+  {t:'13:30', n:'京急線往淺草', p:'選「直通淺草線」的班次，一路坐到淺草站，帶行李最輕鬆。', tags:[['rail','約 45 分']]},
+  {t:'14:30', n:'入住 Richmond Premier 淺草', r:'4.4', p:'就在淺草寺旁，樓下有 UNIQLO，對面是唐吉訶德。', tags:[['walk','約 8 分']], q:'Richmond Hotel Premier Asakusa', m:'ChIJc47CccCOGGARHzy-d9s4Jcs'},
+  {t:'15:00', n:'淺草寺・雷門・仲見世通', must:true, r:'4.6', p:'在大紅燈籠下拍全家福，仲見世吃人形燒和炸肉餅，抽個籤。', tags:[['walk','約 3 分']], q:'Senso-ji', m:'ChIJ8T1GpMGOGGARDYGSgpooDWw'},
+  {t:'16:30', n:'東京晴空塔', must:true, r:'4.4', p:'12 月約 16:30 日落，剛好看白天變夜景；樓下晴空街道有很多卡通商店。', tags:[['walk','約 20 分']], q:'Tokyo Skytree', m:'ChIJ35ov0dCOGGARKvdDH7NPHX0'}
  ]},
- {d:'12/20', w:'日', title:'西海岸 → 美麗海', note:'今天開比較久，上午出發不拖延', icon:'shark', items:[
-  {t:'08:30', n:'退房，往北出發', p:'走沖繩自動車道，車上準備點心與繪本。', tags:[['hwy','許田 IC 方向']]},
-  {t:'10:00', n:'萬座毛', r:'4.2', p:'象鼻形狀的海崖，步道平緩好推推車，入場 100 日圓。', tags:[['hwy','約 1 小時']], m:'16135339115350022424'},
-  {t:'11:30', n:'午餐・名護一帶', p:'路上找沖繩麵或塔可飯，順便上廁所。', tags:[['car','約 40 分']]},
-  {t:'13:30', n:'沖繩美麗海水族館', must:true, r:'4.6', p:'看「黑潮之海」大水槽裡的鯨鯊和鬼蝠魟；海洋博公園的海豚表演免費。16:00 後入館有優惠票。', tags:[['car','約 50 分']], m:'16863911804921552894'},
-  {t:'16:30', n:'備瀨福木林道', r:'4.3', p:'百年福木圍成的綠色隧道，可租腳踏車或坐水牛車，走到底是海。12 月約 17:45 日落。', tags:[['walk','約 10 分']], m:'11784430391842216502'},
-  {t:'18:00', n:'入住 Orion 本部度假飯店', r:'4.6', p:'就在水族館旁邊，泡溫泉消除開車疲勞。', tags:[['walk','約 10 分']], m:'13472893545446433221'}
+ {d:'12/20', w:'日', title:'上野動物園・東京車站', note:'上野動物園週一休園，所以排今天', icon:'panda', items:[
+  {t:'09:30', n:'上野動物園', must:true, r:'4.2', p:'看大貓熊、北極熊和大猩猩；國中生以下免費入園，園內廁所和尿布台很多。', tags:[['rail','銀座線約 5 分']], q:'Ueno Zoological Gardens', m:'ChIJf2129yiMGGAR9I6Yoe-1uHY'},
+  {t:'13:00', n:'阿美橫町', r:'4.3', p:'邊走邊吃水果串、章魚燒，藥妝和零食價格不錯。', tags:[['walk','約 10 分']], q:'Ameyoko market', m:'ChIJh7eDrwCPGGARCs9fpCkKS2U'},
+  {t:'15:00', n:'東京車站一番街・動漫人物街', r:'4.2', p:'地下一樓整排角色商店，寶可夢、Tomica、Kirby 一次逛完；記得蓋車站紀念章。', tags:[['rail','JR 山手線約 8 分']], q:'Tokyo Character Street', m:'ChIJGeYlX_mLGGARx_4HVNDXOxA'},
+  {t:'18:00', n:'回淺草休息', p:'早點睡，明天迪士尼要早起。', tags:[['rail','約 25 分']]}
  ]},
- {d:'12/21', w:'一', title:'古宇利島・今歸仁', note:'同一間飯店連住，不用搬行李', icon:'bridge', items:[
-  {t:'09:30', n:'今歸仁城跡', r:'4.3', p:'世界遺產的琉球古城，彎彎的石牆很好拍，小朋友可以跑跑跳跳。', tags:[['car','約 15 分']], m:'3540016109552839703'},
-  {t:'11:00', n:'古宇利大橋・古宇利島', must:true, r:'4.6', p:'開車過橋兩側都是果凍藍的海；去 Tinu 海灘找心形岩，中午吃蝦蝦飯要早點排。', tags:[['car','約 25 分']], m:'18322415765771207538'},
-  {t:'13:30', n:'古宇利海洋塔', r:'4.4', p:'搭自動駕駛的小車上山，展望台可以俯瞰整座大橋，還有貝殼博物館。', tags:[['car','約 5 分']], m:'16740749444655468324'},
-  {t:'15:30', n:'回飯店休息', p:'泡湯、在大廳附近散步，晚餐可吃本部牛燒肉。', tags:[['car','約 35 分']]}
+ {d:'12/21', w:'一', title:'東京迪士尼樂園一整天', note:'行李先寄放飯店，輕裝入園', icon:'balloon', items:[
+  {t:'07:30', n:'退房，前往舞濱', p:'東京站轉 JR 京葉線到舞濱，月台離山手線很遠，抓 15 分鐘步行。', tags:[['rail','約 50 分']]},
+  {t:'08:30', n:'行李寄放 Hilton Tokyo Bay', r:'4.3', p:'從舞濱搭迪士尼度假區線到 Bayside 站，飯店可先收行李。', tags:[['mono','約 10 分']], q:'Hilton Tokyo Bay', m:'ChIJn9bhTxB9GGAR6XuwFBHgxmA'},
+  {t:'09:00', n:'東京迪士尼樂園', must:true, r:'4.6', p:'門票指定日期要先在官方 App 買好；入園後先用 App 排熱門設施，晚上看完遊行與夜間節目再走。', tags:[['mono','約 10 分']], q:'Tokyo Disneyland', m:'ChIJszdHEQN9GGARy9MJ1TY22eQ'},
+  {t:'20:30', n:'回飯店入住', p:'搭度假區線回 Bayside 站，飯店樓下有便利商店可補宵夜。', tags:[['mono','約 10 分']]}
  ]},
- {d:'12/22', w:'二', title:'中部・動物與購物', note:'雨天也有 AEON 可以待', icon:'palm', items:[
-  {t:'09:30', n:'退房，往中部移動', p:'從許田 IC 上高速往南。', tags:[['hwy','約 1 小時 15 分']]},
-  {t:'11:00', n:'東南植物樂園', must:true, r:'4.1', p:'可以近距離看水豚、餵小動物、釣魚池，熱帶植物超好拍。', tags:[['car','沖繩南 IC 下']], m:'10928720797606820107'},
-  {t:'14:00', n:'AEON MALL 沖繩來客夢', r:'4.4', p:'有寶可夢中心和大型水族箱，超市可以先買伴手禮。', tags:[['car','約 20 分']], m:'14640780388564529515'},
-  {t:'17:00', n:'入住 Hilton 北谷度假飯店', r:'4.4', p:'有溜滑梯泳池，親子評價很好。', tags:[['car','約 20 分']], m:'8219579054869854925'},
-  {t:'17:30', n:'美國村・Depot Island', must:true, r:'4.3', p:'彩色美式街區，日落海灘看夕陽，晚餐選擇很多。', tags:[['walk','約 5 分']], m:'16043783839040664540'}
+ {d:'12/22', w:'二', title:'teamLab 與台場海灣', note:'teamLab 要赤腳踩水，穿可捲起的褲子', icon:'bridge', items:[
+  {t:'09:30', n:'退房，前往豐洲', p:'舞濱搭 JR 京葉線到新木場，轉有樂町線到豐洲。', tags:[['rail','約 35 分']]},
+  {t:'10:30', n:'teamLab Planets', must:true, r:'4.5', p:'走進會發光的水池和花海，小朋友超愛；門票是指定時段，要提早買。', tags:[['walk','約 5 分']], q:'teamLab Planets TOKYO DMM', m:'ChIJSeco5wiJGGARItbTS8lQ5G0'},
+  {t:'13:00', n:'搭百合海鷗號到台場', p:'無人駕駛電車，搶坐第一排看彩虹大橋；入住後寄放行李。', tags:[['mono','約 15 分']]},
+  {t:'14:00', n:'入住 Grand Nikko 台場', r:'4.4', p:'和台場站相連，房間看得到東京灣。', tags:[['walk','約 2 分']], q:'GRAND NIKKO TOKYO DAIBA', m:'ChIJq0s44BuMGGAR15wOlfVd2tE'},
+  {t:'15:00', n:'DiverCity Tokyo Plaza', r:'4.2', p:'大型購物中心，有角色商店、扭蛋區和美食街，天冷可以在室內逛。', tags:[['mono','約 5 分']], q:'DiverCity Tokyo Plaza', m:'ChIJpbpu0_mJGGARd9sJ-psh9Gc'},
+  {t:'17:00', n:'台場海濱公園', must:true, r:'4.4', p:'沙灘步道看彩虹大橋點燈，還有自由女神像，夜景很漂亮。', tags:[['walk','約 10 分']], q:'Odaiba Marine Park', m:'ChIJ18IK6x2KGGARKTc2yLS-030'}
  ]},
- {d:'12/23', w:'三', title:'瀨長島・回家', note:'機場周邊易塞車，還車留足時間', icon:'white', items:[
-  {t:'09:30', n:'退房出發', p:'走國道 58 號往南。', tags:[['car','約 40 分']]},
-  {t:'10:30', n:'瀨長島 Umikaji Terrace', must:true, r:'4.3', p:'白色階梯小鎮，坐在海邊看飛機起降，小朋友最愛。', tags:[['car','約 40 分']], m:'11904711692991169464'},
-  {t:'12:00', n:'加滿油還車', p:'建議起飛前 3 小時以上還車。', tags:[['car','約 15 分']]},
-  {t:'12:45', n:'那霸機場・最後採買', p:'國內線航廈伴手禮最齊，再走到國際線報到。', tags:[['bus','約 10 分']]},
-  {t:'15:30', n:'起飛回台灣', p:'16:05 抵達桃園。', tags:[['flight','約 1.5 小時']]}
+ {d:'12/23', w:'三', title:'東京鐵塔・回家', note:'濱松町搭單軌直達羽田', icon:'tower', items:[
+  {t:'09:30', n:'退房，前往芝公園', p:'百合海鷗號到竹芝，再走到東京鐵塔，行李可先寄車站置物櫃。', tags:[['mono','約 15 分'],['walk','約 15 分']]},
+  {t:'10:30', n:'東京鐵塔', must:true, r:'4.5', p:'紅白鐵塔上主展望台，天氣好能看到富士山；附近芝公園可拍鐵塔全景。', tags:[['walk','約 15 分']], q:'Tokyo Tower', m:'ChIJCewJkL2LGGAR3Qmk0vCTGkg'},
+  {t:'13:30', n:'東京單軌電車往羽田', p:'從濱松町搭單軌電車，窗外看得到海和飛機。', tags:[['mono','約 20 分']]},
+  {t:'14:30', n:'羽田機場・最後採買', p:'第 3 航廈有江戶小路和伴手禮店，報到後慢慢逛。', tags:[]},
+  {t:'17:30', n:'起飛回台灣', p:'20:30 抵達桃園。', tags:[['flight','約 4 小時']]}
  ]}
 ];
 
@@ -410,7 +405,7 @@ function renderDay(i, animate){
         <div class="tags">
           ${it.tags.map(([k,txt])=>`<span class="tg" style="background:${T[k].bg}"><i aria-hidden="true">${T[k].icon}</i>${T[k].label}${txt?'・'+txt:''}</span>`).join('')}
           ${it.r?`<span class="rate">Google ★${it.r}</span>`:''}
-          ${it.m?`<a class="maplk" href="${MAP(it.m)}" target="_blank" rel="noopener">地圖</a>`:''}
+          ${it.m?`<a class="maplk" href="${MAP(it.q,it.m)}" target="_blank" rel="noopener">地圖</a>`:''}
         </div>
       </div></div>`).join('')}
     </div>`;
@@ -436,8 +431,8 @@ tabsEl.addEventListener('keydown', e=>{
 /* 旅途中自動跳到當天 */
 (function(){
   const now = new Date(); let start = 0;
-  if(now >= new Date('2026-12-19T00:00:00+08:00') && now <= RETURN){
-    start = Math.min(4, Math.floor((now - new Date('2026-12-19T00:00:00+08:00'))/86400000));
+  if(now >= DAY1 && now <= RETURN){
+    start = Math.min(4, Math.floor((now - DAY1)/86400000));
     tabsEl.querySelectorAll('.tab').forEach((t,k)=>t.setAttribute('aria-selected', k===start));
   }
   renderDay(start, false);
@@ -446,20 +441,22 @@ tabsEl.addEventListener('keydown', e=>{
 /* ---------- 待辦清單 ---------- */
 const TODO = [
   ['護照（效期 6 個月以上）','大人小孩都要確認'],
-  ['台灣駕照 + 日文譯本','監理站可當場申請'],
-  ['租車與兒童安全座椅預約','順便加購 ETC 卡'],
-  ['美麗海水族館門票','可線上先買省排隊'],
   ['填寫 Visit Japan Web','入境 QR Code 截圖'],
-  ['旅遊平安險・不便險',''],
+  ['迪士尼門票（12/21）','官方 App 購買，指定日期'],
+  ['teamLab Planets 門票（12/22）','指定時段，熱門時段很快賣完'],
+  ['晴空塔門票（12/19 傍晚）','線上買日落時段'],
+  ['Suica 交通卡','手機 Suica 或機場買 Welcome Suica'],
   ['網卡或 eSIM',''],
-  ['日幣現金 + 信用卡','部分小店只收現金'],
-  ['薄外套・防曬用品','12 月均溫約 17–21°C'],
-  ['小朋友常備藥・暈車藥',''],
-  ['行動電源・充電線',''],
-  ['車上零食・繪本・平板','北上車程較長'],
-  ['預約瀨長島鬆餅（如想吃）','熱門店建議提早預約']
+  ['日幣現金 + 信用卡',''],
+  ['保暖衣物・圍巾手套','12 月東京約 4–12°C，洋蔥式穿搭'],
+  ['暖暖包',''],
+  ['teamLab 用短褲或可捲褲管的褲子','會踩到小腿深的水'],
+  ['輕便推車','迪士尼和上野都要走很多路'],
+  ['小朋友常備藥',''],
+  ['行動電源・充電線','迪士尼 App 很耗電'],
+  ['旅遊平安險・不便險','']
 ];
-const KEY='okinawa-trip-todo';
+const KEY='tokyo-trip-todo';
 let done = {};
 try{ done = JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ done = {}; }
 const check = `<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -482,9 +479,9 @@ prog();
 /* ---------- 住宿 ---------- */
 const bedIcon = c => `<svg viewBox="0 0 40 40" width="38" height="38" ${S} aria-hidden="true"><rect x="5" y="20" width="30" height="10" rx="3" fill="${c}"/><rect x="8" y="14" width="10" height="7" rx="3" fill="#FFFFFF"/><line x1="7" y1="30" x2="7" y2="34"/><line x1="33" y1="30" x2="33" y2="34"/></svg>`;
 const STAYS = [
-  {n:'STRATA Naha', c:'#F2A497', when:'12/19 – 12/20・1 晚', area:'那霸・牧志', r:'4.4', f:['步行到國際通','屋頂泳池','早餐評價好'], m:'12430817265158853698'},
-  {n:'Orion 本部度假溫泉飯店', c:'#A8D3E6', when:'12/20 – 12/22・2 晚', area:'本部・備瀨', r:'4.6', f:['走路到水族館','天然溫泉','海景房'], m:'13472893545446433221'},
-  {n:'Hilton 沖繩北谷度假飯店', c:'#B9DAA5', when:'12/22 – 12/23・1 晚', area:'北谷・美國村', r:'4.4', f:['溜滑梯泳池','步行到美國村','停車 ¥500/晚'], m:'8219579054869854925'}
+  {n:'Richmond Hotel Premier 淺草', c:'#F2A497', when:'12/19 – 12/21・2 晚', area:'淺草', r:'4.4', f:['步行到淺草寺','房間較寬敞','早餐評價好'], q:'Richmond Hotel Premier Asakusa', m:'ChIJc47CccCOGGARHzy-d9s4Jcs'},
+  {n:'Hilton Tokyo Bay', c:'#A8D3E6', when:'12/21 – 12/22・1 晚', area:'舞濱・迪士尼度假區', r:'4.3', f:['迪士尼度假區線一站','有家庭房','可先寄行李'], q:'Hilton Tokyo Bay', m:'ChIJn9bhTxB9GGAR6XuwFBHgxmA'},
+  {n:'Grand Nikko Tokyo 台場', c:'#B9DAA5', when:'12/22 – 12/23・1 晚', area:'台場', r:'4.4', f:['與台場站相連','東京灣景','走路到購物中心'], q:'GRAND NIKKO TOKYO DAIBA', m:'ChIJq0s44BuMGGAR15wOlfVd2tE'}
 ];
 document.getElementById('stays').innerHTML = STAYS.map(s=>`
   <article class="card stay">
@@ -493,7 +490,7 @@ document.getElementById('stays').innerHTML = STAYS.map(s=>`
       <h4>${s.n}</h4>
       <p>${s.when}・${s.area}・Google ★${s.r}</p>
       <ul>${s.f.map(x=>`<li class="pill">${x}</li>`).join('')}</ul>
-      <a class="lnk" href="${MAP(s.m)}" target="_blank" rel="noopener">開啟地圖</a>
+      <a class="lnk" href="${MAP(s.q,s.m)}" target="_blank" rel="noopener">開啟地圖</a>
     </div>
   </article>`).join('');
 
